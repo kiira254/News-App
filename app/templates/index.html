@@ -7,14 +7,25 @@
     {% else %}
     <title>Welcome to the best news Review website</title>
     {% endif %}
+
+    
 </head>
 <body>
     <!-- Popular news section -->
     <h3> Popular News </h3>
     <ul>
-        {% for popular_news in popular%}
-        <li>{{ popular_news.title }}</li>
-        {% end if %}
+        {{ macro.displayNewsList(popular)}}
     </ul>
+
+    <!-- Upcoming news  -->
+    <h3> Upcoming news </h3>
+        <ul>
+            {{ macro.displayNewsList(upcoming)}}
+        </ul>
+        <!-- Now showing news -->
+        <h3>Now Showing</h3>
+        <ul>
+            {{ macro.displayNewsList(now_showing)}}
+        </ul>
 </body>
 </html>
