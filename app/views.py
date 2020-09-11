@@ -4,7 +4,7 @@ from app import app
 # views
 @app.route('/news/<int:news_id>') 
 
-def index()
+def index():
 
     '''
     view root page function that returns the index page and its data
