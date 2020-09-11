@@ -1,5 +1,5 @@
 from app import app
-from urllib.request,json
+import urllib.request,json
 from .models import news
 
 News= news.News
@@ -26,4 +26,32 @@ def get_news(category):
             news_results_list= get_news_response['results']
             news_results = process_results(news_results_list)
 
-    return news_results    
+    return news_results   
+
+def process_results(movie_list):
+    '''
+    function that processes the news result and transform them to a list of objects
+
+        Args:
+            news_list: A list of dictonaries that contain news details
+
+        Returns:
+            news_results: A list of news objects
+    '''
+    news_results=[]
+    for news_item in news_list:
+        id = news_item.get("id")
+        name = news_item.get("name")
+        author = news_item.get('author')
+        title = news_item.get('title')
+        description = news_item.get('desciption')
+        poster = news_item.ge('poster_path')
+        content = news_item.get ('content')
+       
+        if poster:
+           news_object= News(id,name,author,title,desciption,poster,content)
+           news_results.append(news_object)
+        
+    return news_object
+
+
