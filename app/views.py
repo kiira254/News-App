@@ -8,4 +8,4 @@ def newspaper(newspaper_id):
     '''
     view root page function that returns the index page and its data
     '''
-    return render_template('newspaper.html', id= movie_id)
+    return render_template('newspaper.html', id= newspaper_id)
