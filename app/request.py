@@ -28,7 +28,7 @@ def get_news(category):
 
     return news_results   
 
-def process_results(movie_list):
+def process_results(news_list):
     '''
     function that processes the news result and transform them to a list of objects
 
@@ -44,12 +44,12 @@ def process_results(movie_list):
         name = news_item.get("name")
         author = news_item.get('author')
         title = news_item.get('title')
-        description = news_item.get('desciption')
+        description = news_item.get('description')
         poster = news_item.ge('poster_path')
         content = news_item.get ('content')
        
         if poster:
-           news_object= News(id,name,author,title,desciption,poster,content)
+           news_object= News(id,name,author,title,description,poster,content)
            news_results.append(news_object)
         
     return news_object
