@@ -45,7 +45,7 @@ def process_results(news_list):
         author = news_item.get('author')
         title = news_item.get('title')
         description = news_item.get('description')
-        poster = news_item.ge('poster_path')
+        poster = news_item.get('poster_path')
         content = news_item.get ('content')
        
         if poster:
@@ -53,5 +53,26 @@ def process_results(news_list):
            news_results.append(news_object)
         
     return news_object
+
+def get_news(id):
+    get_news_details_url=base_url.format(id,api_key)
+    with urllib.request.urlopen(get_news_details_url) as url:
+        news_details_data=url.read()
+        news_details_response=json.load(news_details_data)
+
+            news_object= None
+            if news_details_response:
+                id = news_details_response.get("id")
+                name = news_details_response.get("name")
+                author = news_details_response.get('author')
+                title = news_details_response.get('title')
+                description = news_details_response.get('description')
+                poster = news_details_response.get('poster_path')
+                content = news
+
+                news_object= News(id,name,author,title,description,poster,content)
+
+            return news_object
+                
 
 

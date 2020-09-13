@@ -1,10 +1,18 @@
 from flask import render_template
 from app import app
-from .request import get_news
+from .request import get_news, get_news
+
 
 # views
-@app.route('/') 
+@app.route('/news/<int:id>') 
+def news(id):
+    '''
+     View news page function that returns the news details page and its data
+    '''
+    news= get_news(id)
+    title= f'{movie.title}'
 
+    return render_template{'news.html',title=title,news=news}
 def index():
 
     '''
