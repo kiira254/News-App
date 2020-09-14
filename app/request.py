@@ -1,12 +1,15 @@
 import urllib.request,json
 from app.models import Source,Article
 import requests 
+
 # Getting api key
 api_key = None
+
 # Getting base urls
 highlights_url=None
 sources_url=None
 search_url=None
+
 def configure_request(app):
     global api_key,highlights_url,sources_url,search_url
     api_key = app.config['NEWS_API_KEY']
