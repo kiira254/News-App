@@ -5,10 +5,15 @@ from .models import news
 News= news.News
 
 # getting api key
-api_key = app.config['NEWS_API_KEY']
+api_key = None
 
 #  getting the news base url
-base_url= app.config['NEWS_API_BASE_URL']
+base_url= None
+
+def configure_request(app):
+    global api_key, base_url
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config['NEWS_API_BASE_URL']
 
 def get_news(category):
     '''
@@ -60,7 +65,7 @@ def get_news(id):
         news_details_data=url.read()
         news_details_response=json.load(news_details_data)
 
-            news_object= None
+            news_object = None
             if news_details_response:
                 id = news_details_response.get("id")
                 name = news_details_response.get("name")
