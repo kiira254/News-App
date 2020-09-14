@@ -1,11 +1,14 @@
-{% extends 'base.html'%}
-{% import 'macros.html' as macro%}
-
+{% extends 'base.html' %}
+{% block styles%}
+    {{super()}}
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock%}
 {% block content %}
-    <div class="container">
+<div class="panel panel-danger">
+    <h1 class="my-4 panel-heading">Searches for <span>{{title}}</span></h1>
 
-        <div class="row">
-        </div>
-
-    </div>
+    <ul>
+    {{macro.displaySources(article)}}
+    </ul>
+</div>
 {% endblock %}
