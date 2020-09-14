@@ -4,7 +4,9 @@ class Config:
     '''
     General configuration parent class
     '''
-    NEWS_API_BASE_URL='http://newsapi.org/v2/everything?q=bitcoin&from=2020-08-11&sortBy=publishedAt&apiKey={}'
+    SOURCE_API_URL='https://newsapi.org/v2/sources?apiKey={}'
+    HEADLINES_API_URL="https://newsapi.org/v2/top-headlines?country=us&apiKey={}"
+    SEARCH_SOURCES='https://newsapi.org/v2/everything?q={}&apiKey={}'
     NEWS_API_KEY= os.environ.get('NEWS_API_KEY')
     SECRET_KEY= os.environ.get('SECRET_KEY')
 
