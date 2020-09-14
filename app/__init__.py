@@ -1,8 +1,6 @@
 from flask import Flask
 from config import DevConfig, Config_options
 from flask_bootstrap import Bootstrap
-from app import views
-from app import error
 
 #initializing application
 app = Flask(__name__,instance_relative_config = True)
@@ -32,6 +30,3 @@ def create_app(config_name):
     configure_request(app)
 
     return app
-
-
-from app import views
