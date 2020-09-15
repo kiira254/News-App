@@ -5,16 +5,16 @@
         <div class="row">
             <div class="col-lg-6 mb-4 col-xs-12 col-sm-12 col-md-4 ">
                 <div class="card h-100">
-                <img  src="{{source.urlToImage}}" alt="" class="img-responsive">
-                <div class="card-body">
-                    <h4 class="card-title">
-                    <a href="{{source.url}}" target="_blank">{{source.title}}</a>
-                    </h4>
-                    <p class="card-text">{{source.description}}</p>
-                    <p>Posted from:<span class="label label-primary">{{source.source['name']}}</span>  <span></span> Posted At:<span class="label label-danger">{{source.publishedAt}}</span></p>
+                    <img  src="{{source.urlToImage}}" alt="" class="img-responsive">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                        <a href="{{source.url}}" target="_blank">{{source.title}}</a>
+                        </h4>
+                        <p class="card-text">{{source.description}}</p>
+                        <p>Posted from:<span class="text-white bg-dark">{{source.source['name']}}</span>  <span></span> Posted At:<span class="label label-danger">{{source.publishedAt}}</span></p>
+                </div>
+                <hr style="border-width: 2px;">
             </div>
-            <hr style="border-width: 2px;">
-        </div>
     </div>
     {% endfor %}
 {% endmacro%}

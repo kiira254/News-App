@@ -21,20 +21,20 @@
     {% endblock %}
     <!-- Content block -->
     {% block content %}
-    <div class="panel panel-danger">
+    <div class="panel panel-info" style="text-align: center;">
         <h1 class="my-4 panel-heading">TOP HEADLINES</h1>
         <ul>
         {{macro.displaySources(articles)}}
         </ul>
     </div>
     <div class="panel panel-success">
-        <h1 class="my-4 panel-heading">Sports</h1>
+        <h1 class="my-4 panel-heading">Sports For You</h1>
         <ul>
         {{macro.displaySources(sports)}}
         </ul>
     </div>
-    <div class="panel panel-danger">
-        <h1 class="my-4 panel-heading">Business</h1>
+    <div class="panel panel-success">
+        <h1 class="my-4 panel-heading">Business News Today</h1>
         <ul>
         {{macro.displaySources(business)}}
         </ul>

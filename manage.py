@@ -1,19 +1,18 @@
 from app import create_app
-from flask_script import Manager, Server
+from flask_script import Manager,Server
 
-# Create app instance
+# Creating app instance
 app = create_app('development')
-Manager= Manager(app)
-Manager.add_command('server',Server)
 
-@Manager .command
+manager = Manager(app)
+
+manager.add_command('server',Server)
+
+@manager.command
 def test():
-    ''' 
-    run the unit test
-    '''
+    """Run the unit tests."""
     import unittest
-    tests= unittest.TestLoader().discover('tests')
+    tests = unittest.TestLoader().discover('tests')
     unittest.TextTestRunner(verbosity=2).run(tests)
-
 if __name__ == '__main__':
-    Manager.run()
+    manager.run()
